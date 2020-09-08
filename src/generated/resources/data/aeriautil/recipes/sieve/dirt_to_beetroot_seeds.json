@@ -1,0 +1,11 @@
+{
+  "type": "aeriautil:sieve",
+  "input": {
+    "tag": "aeriautil:dirt"
+  },
+  "output": {
+    "item": "minecraft:beetroot_seeds"
+  },
+  "maxCount": 1,
+  "chance": 0.01
+}

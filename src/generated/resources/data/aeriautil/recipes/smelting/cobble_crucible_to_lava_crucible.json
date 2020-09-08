@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "aeriautil:cobble_crucible"
+  },
+  "result": "aeriautil:lava_crucible",
+  "experience": 0.35,
+  "cookingtime": 200
+}

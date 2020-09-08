@@ -1,0 +1,23 @@
+{
+  "itemGroup.aeriautil": "AeriaUtil",
+
+  "block.aeriautil.composter": "Composting Barrel",
+  "block.aeriautil.sieve": "Sieve",
+  "block.aeriautil.dust": "Dust",
+  "block.aeriautil.leaf_pile": "Leaf Pile",
+
+  "item.aeriautil.pebble": "Pebble",
+  "item.aeriautil.wooden_hammer": "Wooden Hammer",
+  "item.aeriautil.stone_hammer": "Stone Hammer",
+  "item.aeriautil.iron_hammer": "Iron Hammer",
+  "item.aeriautil.diamond_hammer": "Diamond Hammer",
+  "item.aeriautil.stone_shears": "Stone Shears",
+  "item.aeriautil.unfired_crucible": "Unfired Crucible",
+  "item.aeriautil.crucible": "Crucible",
+  "item.aeriautil.cobble_crucible": "Crucible with Cobblestone",
+  "item.aeriautil.lava_crucible": "Lava Crucible",
+  "item.aeriautil.ender_totem": "Ender Totem",
+
+  "aeriautil.tooltip.lava_crucible": "§c⚠ Very fragile. Will break within 10 seconds!",
+  "aeriautil.tooltip.ender_totem": "Trust me. Walk over the edge."
+}

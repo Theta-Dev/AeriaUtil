@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    " IX",
+    "I  "
+  ],
+  "key": {
+    "X": {
+      "tag": "forge:cobblestone"
+    },
+    "I": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "aeriautil:stone_hammer"
+  }
+}

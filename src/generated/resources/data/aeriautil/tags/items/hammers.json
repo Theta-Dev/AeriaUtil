@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "aeriautil:wooden_hammer",
+    "aeriautil:stone_hammer",
+    "aeriautil:iron_hammer",
+    "aeriautil:diamond_hammer"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "aeriautil:sieve",
+  "input": {
+    "tag": "aeriautil:dirt"
+  },
+  "output": {
+    "item": "minecraft:wheat_seeds"
+  },
+  "maxCount": 3,
+  "chance": 0.05
+}

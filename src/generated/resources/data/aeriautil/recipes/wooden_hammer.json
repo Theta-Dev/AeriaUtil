@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    " IX",
+    "I  "
+  ],
+  "key": {
+    "X": {
+      "tag": "minecraft:planks"
+    },
+    "I": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "aeriautil:wooden_hammer"
+  }
+}

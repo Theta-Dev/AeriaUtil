@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "OOO",
+    "OXO",
+    "OOO"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:totem_of_undying"
+    },
+    "O": {
+      "item": "minecraft:ender_eye"
+    }
+  },
+  "result": {
+    "item": "aeriautil:ender_totem"
+  }
+}

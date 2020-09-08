@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "S#S",
+    " S "
+  ],
+  "key": {
+    "#": {
+      "item": "aeriautil:crucible"
+    },
+    "S": {
+      "tag": "forge:cobblestone"
+    }
+  },
+  "result": {
+    "item": "aeriautil:cobble_crucible"
+  }
+}

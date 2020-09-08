@@ -1,0 +1,10 @@
+{
+  "type": "aeriautil:hammer",
+  "input": {
+    "type": "block",
+    "block": "minecraft:gravel"
+  },
+  "output": {
+    "item": "minecraft:sand"
+  }
+}

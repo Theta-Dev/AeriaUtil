@@ -1,0 +1,11 @@
+{
+  "type": "aeriautil:sieve",
+  "input": {
+    "tag": "aeriautil:dirt"
+  },
+  "output": {
+    "item": "aeriautil:pebble"
+  },
+  "maxCount": 8,
+  "chance": 1.0
+}

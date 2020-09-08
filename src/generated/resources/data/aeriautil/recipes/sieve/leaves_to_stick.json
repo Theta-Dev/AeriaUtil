@@ -1,0 +1,11 @@
+{
+  "type": "aeriautil:sieve",
+  "input": {
+    "tag": "minecraft:leaves"
+  },
+  "output": {
+    "item": "minecraft:stick"
+  },
+  "maxCount": 1,
+  "chance": 0.1
+}

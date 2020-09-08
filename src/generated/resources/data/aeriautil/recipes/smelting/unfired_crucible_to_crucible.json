@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "aeriautil:unfired_crucible"
+  },
+  "result": "aeriautil:crucible",
+  "experience": 0.35,
+  "cookingtime": 200
+}

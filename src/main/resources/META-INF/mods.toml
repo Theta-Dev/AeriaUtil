@@ -1,0 +1,23 @@
+modLoader="javafml"
+loaderVersion="[31,)"
+[[mods]]
+modId="aeriautil"
+version="${file.jarVersion}"
+displayName="AeriaUtil"
+displayURL="http://example.com/"
+authors="ThetaDev"
+description='''
+Gib dein Herz nicht auf, Aeria
+'''
+[[dependencies.aeriautil]]
+    modId="forge"
+    mandatory=true
+    versionRange="[31,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.aeriautil]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"
