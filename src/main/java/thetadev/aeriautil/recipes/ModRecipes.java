@@ -16,10 +16,14 @@ public class ModRecipes
 	public static final IRecipeType<HammerRecipe> HAMMER_TYPE = new RecipeType<>();
 	public static final IRecipeSerializer<HammerRecipe> HAMMER_SERIALIZER = new HammerRecipe.Serializer();
 
+	public static final IRecipeType<WashingRecipe> WASHING_TYPE = new RecipeType<>();
+	public static final IRecipeSerializer<WashingRecipe> WASHING_SERIALIZER = new WashingRecipe.Serializer();
+
 
 	public static void register(IForgeRegistry<IRecipeSerializer<?>> registry) {
 		register(registry, "sieve", SIEVE_TYPE, SIEVE_SERIALIZER);
 		register(registry, "hammer", HAMMER_TYPE, HAMMER_SERIALIZER);
+		register(registry, "washing", WASHING_TYPE, WASHING_SERIALIZER);
 	}
 
 	private static void register(IForgeRegistry<IRecipeSerializer<?>> registry, String name, IRecipeType<?> type, IRecipeSerializer<?> serializer) {

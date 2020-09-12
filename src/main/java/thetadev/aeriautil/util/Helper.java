@@ -1,6 +1,7 @@
 package thetadev.aeriautil.util;
 
 import javafx.util.Pair;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,6 +11,9 @@ import net.minecraft.particles.ParticleTypes;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapeCube;
+import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.World;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import thetadev.aeriautil.AeriaUtil;
@@ -96,5 +100,18 @@ public class Helper
 		for(int i=0; i<n; i++) {
 			world.addParticle(new BlockParticleData(ParticleTypes.BLOCK, blockState), getspread.apply(new Pair<>(x, spreadx)), getspread.apply(new Pair<>(y, spready)), getspread.apply(new Pair<>(z, spreadz)), 0, 0, 0);
 		}
+	}
+
+	public static VoxelShape rotateShape(Direction from, Direction to, VoxelShape shape) {
+		VoxelShape[] buffer = new VoxelShape[]{ shape, VoxelShapes.empty() };
+
+		int times = (to.getHorizontalIndex() - from.getHorizontalIndex() + 4) % 4;
+		for (int i = 0; i < times; i++) {
+			buffer[0].forEachBox((minX, minY, minZ, maxX, maxY, maxZ) -> buffer[1] = VoxelShapes.or(buffer[1], VoxelShapes.create(1-maxZ, minY, minX, 1-minZ, maxY, maxX)));
+			buffer[0] = buffer[1];
+			buffer[1] = VoxelShapes.empty();
+		}
+
+		return buffer[0];
 	}
 }

@@ -8,8 +8,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.particles.BlockParticleData;
-import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -18,6 +16,7 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraftforge.items.ItemHandlerHelper;
 import thetadev.aeriautil.data.BlockStateGenerator;
 import thetadev.aeriautil.recipes.SieveRecipe;
 import thetadev.aeriautil.registry.ICustomBlockState;
@@ -53,15 +52,16 @@ public class BlockSieve extends BlockImpl implements ICustomBlockState
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		ItemStack stack = player.getHeldItem(handIn);
 		if(stack.isEmpty()) return ActionResultType.FAIL;
+		ItemStack input = ItemHandlerHelper.copyStackWithSize(stack, 1);
 
-		List<ItemStack> output = SieveRecipe.getResult(stack, worldIn);
+		List<ItemStack> output = SieveRecipe.getResult(input, worldIn);
 		if(output.isEmpty()) return ActionResultType.FAIL;
+		stack.shrink(1);
 
 		BlockState blockState;
-		if(stack.getItem() instanceof BlockItem) blockState = ((BlockItem)stack.getItem()).getBlock().getDefaultState();
+		if(input.getItem() instanceof BlockItem) blockState = ((BlockItem)input.getItem()).getBlock().getDefaultState();
 		else blockState = Blocks.DIRT.getDefaultState();
 
-		stack.shrink(1);
 		if(!worldIn.isRemote) Helper.dropItems(output, worldIn, pos.getX()+0.5, pos.getY()+1, pos.getZ()+0.5);
 		Helper.spawnBlockParticles(worldIn, blockState, 5, pos.getX()+0.5, pos.getY()+1, pos.getZ()+0.5, 0.4, 0.1, 0.4);
 		return ActionResultType.SUCCESS;

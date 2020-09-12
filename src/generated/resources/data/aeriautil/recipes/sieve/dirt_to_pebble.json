@@ -6,6 +6,6 @@
   "output": {
     "item": "aeriautil:pebble"
   },
-  "maxCount": 8,
-  "chance": 1.0
+  "numRolls": 8,
+  "chance": 0.5
 }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "aeriautil:block/firefly"
+    },
+    "facing=south": {
+      "model": "aeriautil:block/firefly",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "aeriautil:block/firefly",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "aeriautil:block/firefly",
+      "y": 90
+    }
+  }
+}

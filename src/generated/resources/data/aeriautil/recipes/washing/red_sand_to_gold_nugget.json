@@ -1,0 +1,11 @@
+{
+  "type": "aeriautil:washing",
+  "input": {
+    "item": "minecraft:red_sand"
+  },
+  "output": {
+    "item": "minecraft:gold_nugget"
+  },
+  "numRolls": 1,
+  "chance": 0.25
+}

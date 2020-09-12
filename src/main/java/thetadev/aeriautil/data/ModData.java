@@ -22,6 +22,7 @@ public final class ModData {
 			generator.addProvider(new SmeltingProvider(generator));
 			generator.addProvider(new SieveProvider(generator));
 			generator.addProvider(new HammerProvider(generator));
+			generator.addProvider(new WashingProvider(generator));
 
 			generator.addProvider(new BlockTagProvider(generator));
 			generator.addProvider(new ItemTagProvider(generator));

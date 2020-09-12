@@ -1,0 +1,11 @@
+{
+  "type": "aeriautil:washing",
+  "input": {
+    "item": "minecraft:gravel"
+  },
+  "output": {
+    "item": "minecraft:iron_nugget"
+  },
+  "numRolls": 1,
+  "chance": 0.5
+}

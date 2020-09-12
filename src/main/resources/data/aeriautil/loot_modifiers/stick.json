@@ -1,0 +1,16 @@
+{
+  "type": "aeriautil:stick",
+  "conditions": [
+    {
+      "condition": "minecraft:alternative",
+      "terms": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "tag": "forge:rods/wooden"
+          }
+        }
+      ]
+    }
+  ]
+}

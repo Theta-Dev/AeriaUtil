@@ -83,6 +83,7 @@ public class BlockComposter extends BlockContainerImpl implements ICustomBlockSt
 		TileEntityComposter composter = (TileEntityComposter)tile;
 
 		if(composter.getState() == TileEntityComposter.ComposterState.ACCEPTING) return Helper.putStackOnTile(player, handIn, pos, 0, true);
-		else return composter.outputItems.drop(true) ? ActionResultType.SUCCESS : ActionResultType.FAIL;
+		else if(composter.getState() == TileEntityComposter.ComposterState.EXTRACTING) return composter.outputItems.drop(true) ? ActionResultType.SUCCESS : ActionResultType.FAIL;
+		return ActionResultType.FAIL;
 	}
 }

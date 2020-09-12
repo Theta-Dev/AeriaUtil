@@ -18,14 +18,14 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-public class SieveRecipe extends ModRecipe
+public class WashingRecipe extends ModRecipe
 {
 	public final Ingredient input;
 	public final ItemStack output;
 	public final int numRolls;
 	public final float chance;
 
-	public SieveRecipe(ResourceLocation name, Ingredient input, ItemStack output, int numRolls, float chance) {
+	public WashingRecipe(ResourceLocation name, Ingredient input, ItemStack output, int numRolls, float chance) {
 		super(name);
 		this.input = input;
 		this.output = output;
@@ -48,19 +48,19 @@ public class SieveRecipe extends ModRecipe
 
 	@Override
 	public IRecipeSerializer<?> getSerializer() {
-		return ModRecipes.SIEVE_SERIALIZER;
+		return ModRecipes.WASHING_SERIALIZER;
 	}
 
 	@Override
 	public IRecipeType<?> getType() {
-		return ModRecipes.SIEVE_TYPE;
+		return ModRecipes.WASHING_TYPE;
 	}
 
-	public static class Serializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<SieveRecipe>
+	public static class Serializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<WashingRecipe>
 	{
 		@Override
-		public SieveRecipe read(ResourceLocation recipeId, JsonObject json) {
-			return new SieveRecipe(recipeId, Ingredient.deserialize(json.get("input")),
+		public WashingRecipe read(ResourceLocation recipeId, JsonObject json) {
+			return new WashingRecipe(recipeId, Ingredient.deserialize(json.get("input")),
 					CraftingHelper.getItemStack(json.getAsJsonObject("output"), true),
 					json.get("numRolls").getAsInt(),
 					json.get("chance").getAsFloat());
@@ -68,12 +68,12 @@ public class SieveRecipe extends ModRecipe
 
 		@Nullable
 		@Override
-		public SieveRecipe read(ResourceLocation recipeId, PacketBuffer buffer) {
-			return new SieveRecipe(recipeId, Ingredient.read(buffer), buffer.readItemStack(), buffer.readInt(), buffer.readFloat());
+		public WashingRecipe read(ResourceLocation recipeId, PacketBuffer buffer) {
+			return new WashingRecipe(recipeId, Ingredient.read(buffer), buffer.readItemStack(), buffer.readInt(), buffer.readFloat());
 		}
 
 		@Override
-		public void write(PacketBuffer buffer, SieveRecipe recipe) {
+		public void write(PacketBuffer buffer, WashingRecipe recipe) {
 			recipe.input.write(buffer);
 			buffer.writeItemStack(recipe.output);
 			buffer.writeInt(recipe.numRolls);
@@ -89,13 +89,13 @@ public class SieveRecipe extends ModRecipe
 		json.addProperty("chance", chance);
 	}
 
-	public static List<SieveRecipe> getRecipes(ItemStack input, World world) {
-		List<SieveRecipe> recipeList = world.getRecipeManager().getRecipes(ModRecipes.SIEVE_TYPE, null, null);
+	public static List<WashingRecipe> getRecipes(ItemStack input, World world) {
+		List<WashingRecipe> recipeList = world.getRecipeManager().getRecipes(ModRecipes.WASHING_TYPE, null, null);
 		return recipeList.stream().filter(recipe -> recipe.matches(input)).collect(Collectors.toList());
 	}
 
 	public static List<ItemStack> getResult(ItemStack input, World world) {
-		List<SieveRecipe> recipeList = getRecipes(input, world);
+		List<WashingRecipe> recipeList = getRecipes(input, world);
 
 		return recipeList.stream().map(recipe -> recipe.getOutput(world.getRandom(), input.getCount())).collect(Collectors.toList());
 	}

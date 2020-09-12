@@ -2,19 +2,17 @@ package thetadev.aeriautil;
 
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thetadev.aeriautil.item.ModItems;
-import thetadev.aeriautil.registry.ModRegistry;
-import thetadev.aeriautil.util.ModConfig;
+import thetadev.aeriautil.util.ConfigHandler;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(AeriaUtil.MOD_ID)
@@ -31,9 +29,7 @@ public class AeriaUtil
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.addListener(this::setup);
 
-        ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
-        ModConfig.instance = new ModConfig(builder);
-        ModLoadingContext.get().registerConfig(net.minecraftforge.fml.config.ModConfig.Type.COMMON, builder.build());
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ConfigHandler.SPEC);
     }
 
     public static final ItemGroup CREATIVE_TAB = new ItemGroup(MOD_ID) {

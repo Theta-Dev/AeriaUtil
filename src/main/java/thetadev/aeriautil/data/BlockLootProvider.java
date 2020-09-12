@@ -63,6 +63,10 @@ public class BlockLootProvider implements IDataProvider
 
 	public static class LootTableHooks extends BlockLootTables
 	{
+		public static LootTable.Builder genEmpty() {
+			return LootTable.builder();
+		}
+
 		public static LootTable.Builder genLeaves(Block block, Block drop) {
 			return droppingWithChancesAndSticks(block, drop, 0.05F, 0.0625F, 0.083333336F, 0.1F);
 		}

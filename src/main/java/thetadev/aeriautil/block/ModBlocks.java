@@ -11,6 +11,7 @@ public class ModBlocks
 	public static Block DUST;
 	public static Block LEAF_PILE;
 	public static Block RAW_OBSIDIAN;
+	public static Block FIREFLY;
 
 
 	public static void register(RegistryEvent.Register<Block> event) {
@@ -19,7 +20,8 @@ public class ModBlocks
 				new BlockSieve(),
 				new BlockDust(),
 				new BlockLeafPile(),
-				new BlockRawObsidian()
+				new BlockRawObsidian(),
+				new BlockFirefly()
 		);
 	}
 }

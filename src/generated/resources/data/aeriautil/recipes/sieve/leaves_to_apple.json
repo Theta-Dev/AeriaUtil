@@ -6,6 +6,6 @@
   "output": {
     "item": "minecraft:apple"
   },
-  "maxCount": 1,
+  "numRolls": 1,
   "chance": 0.05
 }

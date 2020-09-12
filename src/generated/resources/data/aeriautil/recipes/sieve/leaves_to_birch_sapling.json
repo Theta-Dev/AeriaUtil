@@ -6,6 +6,6 @@
   "output": {
     "item": "minecraft:birch_sapling"
   },
-  "maxCount": 1,
+  "numRolls": 1,
   "chance": 0.01
 }

@@ -22,8 +22,8 @@ public class SieveProvider extends RecipeProvider
 
 	@Override
 	protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
-		sieve(Inp.fromTag(ModItemTags.DIRT), new ItemStack(ModItems.PEBBLE), 8, 1, consumer);
-		sieve(Inp.fromTag(ModItemTags.DIRT), new ItemStack(Items.WHEAT_SEEDS), 3, 0.05F, consumer);
+		sieve(Inp.fromTag(ModItemTags.DIRT), new ItemStack(ModItems.PEBBLE), 8, 0.5F, consumer);
+		sieve(Inp.fromTag(ModItemTags.DIRT), new ItemStack(Items.WHEAT_SEEDS), 2, 0.04F, consumer);
 		sieve(Inp.fromTag(ModItemTags.DIRT), new ItemStack(Items.BEETROOT_SEEDS), 1, 0.01F, consumer);
 		sieve(Inp.fromTag(ModItemTags.DIRT), new ItemStack(Items.MELON_SEEDS), 1, 0.01F, consumer);
 		sieve(Inp.fromTag(ModItemTags.DIRT), new ItemStack(Items.PUMPKIN_SEEDS), 1, 0.01F, consumer);
@@ -50,7 +50,7 @@ public class SieveProvider extends RecipeProvider
 		return AeriaUtil.loc("sieve/" + a + "_to_" + b);
 	}
 
-	private void sieve(Inp input, ItemStack output, int maxCount, float chance, Consumer<IFinishedRecipe> consumer) {
-		consumer.accept(new FinishedRecipe(new SieveRecipe(idFor(input.name, output.getItem().getRegistryName().getPath()), input.ingredient, output, maxCount, chance)));
+	private void sieve(Inp input, ItemStack output, int numRolls, float chance, Consumer<IFinishedRecipe> consumer) {
+		consumer.accept(new FinishedRecipe(new SieveRecipe(idFor(input.name, output.getItem().getRegistryName().getPath()), input.ingredient, output, numRolls, chance)));
 	}
 }

@@ -3,7 +3,6 @@ package thetadev.aeriautil.registry;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemTier;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
@@ -16,22 +15,19 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 import thetadev.aeriautil.AeriaUtil;
 import thetadev.aeriautil.block.*;
 import thetadev.aeriautil.block.tiles.ModTileEntities;
-import thetadev.aeriautil.item.ItemHammer;
-import thetadev.aeriautil.item.ItemImpl;
 import thetadev.aeriautil.item.ModItems;
+import thetadev.aeriautil.loot.LootModifierStick;
 import thetadev.aeriautil.loot.LootModifierHammer;
 import thetadev.aeriautil.recipes.ModRecipes;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Set;
+import java.util.*;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModRegistry
 {
-	public static final Set<IModItem> ALL_ITEMS = new HashSet<>();
+	public static final List<IModItem> ALL_ITEMS = new ArrayList<>();
 
 	public static void add(IModItem item) {
 		ALL_ITEMS.add(item);
@@ -75,7 +71,8 @@ public class ModRegistry
 	@SubscribeEvent
 	public static void registerModifierSerializers(RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
 		event.getRegistry().registerAll(
-				new LootModifierHammer.Serializer()
+				new LootModifierHammer.Serializer(),
+				new LootModifierStick.Serializer()
 		);
 	}
 

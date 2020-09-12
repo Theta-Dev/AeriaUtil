@@ -1,6 +1,7 @@
 {
   "replace": false,
   "entries": [
-    "aeriautil:hammer"
+    "aeriautil:hammer",
+    "aeriautil:stick"
   ]
 }
